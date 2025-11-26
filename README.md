@@ -14,7 +14,7 @@ Please find the video via this link: https://www.loom.com/share/2ddf6387d1114455
 (Note: In the recording, the browser microphone sometimes filtered out the bot TTS audio as “background noise,” causing it not to be captured in the screencast. For completeness, I have included the audio samples that were recorded automatically of the AI customer reply inside the /audio_out folder.)
 ________________________________________
 
-Features
+** Features
 
 1.	Real-Time Voice Interaction
 o	Mic input → ASR → LLM simulation → TTS output
@@ -69,7 +69,7 @@ o	Memory truncation
 o	Graceful handling of missing data / unexpected turns
 ________________________________________
 
-2. Personas & Scenarios
+** Personas & Scenarios
     Three required personas:
 1.	Lost Card — Angry customer
 2.	Account Locked — Stressed customer
@@ -82,7 +82,8 @@ ________________________________________
 •	Persona tone & constraints
 ________________________________________
 
-Browser UI
+** Browser UI
+
 → Audio recording
 → Upload to /session/turn-audio
 → ASR transcription
@@ -92,7 +93,8 @@ Browser UI
 → Audio playback in browser
 All state is stored per session in memory.
 
-High-Level Components:
+** High-Level Components:
+
 client.html             # Minimal UI (mic input + audio playback + metrics)
 api.py                  # FastAPI backend (ASR, LLM pipeline, TTS, session mgmt)
 voice_pipeline.py       # ASR/TTS utilities, temp handling, file outputs
@@ -108,14 +110,14 @@ README.md               # This document
 Technical_Documentation.pdf   # Deep architecture explanation
 ________________________________________
 
-4. Models Used
+**  Models Used
 •	ASR: Whisper (OpenAI)
 •	LLM (customer, evaluation, coaching, safety): gpt-4o-mini
 •	TTS: OpenAI Speech (MP3 output)
 All models chosen for latency, cost efficiency, and deterministic behavior.
 ________________________________________
 
- * How to Run Locally
+** How to Run Locally
 
     1. git clone https://github.com/YOUR_USERNAME/bank-voice-training-simulation.git
         cd bank-voice-training-simulation
@@ -141,7 +143,7 @@ ________________________________________
   
 ________________________________________
 
-6. Deliverables Included
+** Deliverables Included
 •	Full runnable repository
 •	Live voice demo video
 •	Technical_Documentation.pdf
@@ -154,13 +156,13 @@ o	RAG integration
 o	Latency/cost analysis
 o	Limitations & future improvements
 ________________________________________
-7. Known Limitations
+** Known Limitations
 •	Audio is turn-based, not full WebRTC duplex streaming
 •	RAG is partial (sufficient for demonstration)
 •	No avatar / facial animation (optional extension)
 •	No multi-session long-term memory
 ________________________________________
-8. What I Would Do With More Time
+** What I Would Do With More Time
 •	Add WebRTC full-duplex with barge-in interruption
 •	Introduce a talking-head avatar with emotion-aware lip sync
 •	Expand RAG to semantic policy lookup with authoritative citations
@@ -168,8 +170,9 @@ ________________________________________
 •	Add datastore-backed analytics & session replay
 •	Support long-term adaptive learning across sessions
 ________________________________________
-Final Note
+** Final Note
 This project fulfills all required elements of Option A, plus multiple extensions (live hints, assessment, RAG integration, cost/latency tracking). The emphasis remains on AI rigor, state correctness, and simulation reliability, as requested in the task specification.
+
 
 
 
