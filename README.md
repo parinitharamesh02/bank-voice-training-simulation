@@ -117,24 +117,24 @@ ________________________________________
 
  * How to Run Locally
 
-   1. git clone https://github.com/YOUR_USERNAME/bank-voice-training-simulation.git
+    1. git clone https://github.com/YOUR_USERNAME/bank-voice-training-simulation.git
         cd bank-voice-training-simulation
-   2. Create & Activate Virtual Environment
+    2. Create & Activate Virtual Environment
       python -m venv venv
       Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
       venv\Scripts\activate
       On macOS/Linux
       source venv/bin/activate
-  3. Install Dependencies
+    3. Install Dependencies
      pip install -r requirements.txt
-  4. Configure Environment
+    4. Configure Environment
      In the existing .env file in project root, add the API key:
      OPENAI_API_KEY=your_key_here
-  5. Start Backend
+    5. Start Backend
      uvicorn api:app --reload
-  6. The backend will start at:
+    6. The backend will start at:
      http://127.0.0.1:8000 or http://127.0.0.1:8000/docs 
-  7. Open the UI
+    7. Open the UI
      Open client.html directly in your browser.
     (No web server required for the frontend.)
     You can now start a session, speak via microphone, and interact with the AI customer.
@@ -170,5 +170,6 @@ ________________________________________
 ________________________________________
 Final Note
 This project fulfills all required elements of Option A, plus multiple extensions (live hints, assessment, RAG integration, cost/latency tracking). The emphasis remains on AI rigor, state correctness, and simulation reliability, as requested in the task specification.
+
 
 
