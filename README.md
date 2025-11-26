@@ -1,9 +1,12 @@
 Bank Voice Training Simulation
+
 Convergent AI - Technical Task (Option A)
+
 Candidate - Parinitha 
 
 A real-time, voice-based simulation environment where a learner practices handling bank customer support scenarios with an LLM-driven “customer.” The emphasis is on AI quality, stateful multi-agent orchestration, latency/cost observability, safety, and evaluation logic.
 UI is intentionally minimal, as specified in the assignment.
+
 •	A detailed architectural write-up is included in the repository as:
 Technical_Documentation.pdf (Architecture, design rationale, multi-agent system, reliability, state management, trade-offs).
 
@@ -14,7 +17,7 @@ Please find the video via this link: https://www.loom.com/share/2ddf6387d1114455
 (Note: In the recording, the browser microphone sometimes filtered out the bot TTS audio as “background noise,” causing it not to be captured in the screencast. For completeness, I have included the audio samples that were recorded automatically of the AI customer reply inside the /audio_out folder.)
 ________________________________________
 
-** Features
+* Features
 
 1.	Real-Time Voice Interaction
 o	Mic input → ASR → LLM simulation → TTS output
@@ -69,7 +72,9 @@ o	Memory truncation
 o	Graceful handling of missing data / unexpected turns
 ________________________________________
 
-** Personas & Scenarios
+* Personas & Scenarios
+
+
     Three required personas:
 1.	Lost Card — Angry customer
 2.	Account Locked — Stressed customer
@@ -82,96 +87,180 @@ ________________________________________
 •	Persona tone & constraints
 ________________________________________
 
-** Browser UI
+* Browser UI
 
 → Audio recording
+
 → Upload to /session/turn-audio
+
 → ASR transcription
+
 → LLM simulation (LangGraph)
+
 → Evaluation + coaching + safety
+
 → TTS synthesis
+
 → Audio playback in browser
+
 All state is stored per session in memory.
 
-** High-Level Components:
+
+
+* High-Level Components:
 
 client.html             # Minimal UI (mic input + audio playback + metrics)
+
 api.py                  # FastAPI backend (ASR, LLM pipeline, TTS, session mgmt)
+
 voice_pipeline.py       # ASR/TTS utilities, temp handling, file outputs
+
 agents.py               # LangGraph workflow: customer, evaluator, coach, safety
+
 personas.py             # Persona definitions
+
 scenarios.py            # Scenario metadata + initial state builders
+
 state.py                # SimulationState structure
+
 config.py               # Environment keys & model configuration
+
 main_cli.py             # CLI version of the simulation (text-only)
+
 requirements.txt
+
 .env.example
+
 README.md               # This document
+
 Technical_Documentation.pdf   # Deep architecture explanation
 ________________________________________
 
-**  Models Used
+*  Models Used
+
+
 •	ASR: Whisper (OpenAI)
+
 •	LLM (customer, evaluation, coaching, safety): gpt-4o-mini
-•	TTS: OpenAI Speech (MP3 output)
+
+•	TTS: OpenAI Speech
+
 All models chosen for latency, cost efficiency, and deterministic behavior.
 ________________________________________
 
-** How to Run Locally
+* How to Run Locally
 
-    1. git clone https://github.com/YOUR_USERNAME/bank-voice-training-simulation.git
-        cd bank-voice-training-simulation
-    2. Create & Activate Virtual Environment
-      python -m venv venv
-      Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-      venv\Scripts\activate
-      On macOS/Linux
-      source venv/bin/activate
+
+    1. Clone the Repositary
+       
+       git clone https://github.com/parinitharamesh02/bank-voice-training-simulation.git
+       
+       cd bank-voice-training-simulation
+       
+        
+
+     2. Create & Activate Virtual Environment
+     
+          python -m venv venv
+          Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+          venv\Scripts\activate
+
+          On macOS/Linux
+          source venv/bin/activate
+       
+      
+   
     3. Install Dependencies
-     pip install -r requirements.txt
-    4. Configure Environment
-     In the existing .env file in project root, add the API key:
-     OPENAI_API_KEY=your_key_here
+     
+         pip install -r requirements.txt
+     
+
+   
+     4. Configure Environment
+    
+         In the existing .env file in project root, add the API key:
+         OPENAI_API_KEY=your_key_here
+     
+
+   
     5. Start Backend
-     uvicorn api:app --reload
+   
+         uvicorn api:app --reload
+     
+
+
     6. The backend will start at:
-     http://127.0.0.1:8000 or http://127.0.0.1:8000/docs 
+   
+        http://127.0.0.1:8000 or http://127.0.0.1:8000/docs 
+     
+
+
     7. Open the UI
-     Open client.html directly in your browser.
-    (No web server required for the frontend.)
-    You can now start a session, speak via microphone, and interact with the AI customer.
+     
+         Open client.html directly in your browser.
+
+       (No web server required for the frontend.)
+
+       You can now start a session, speak via microphone, and interact with the AI customer.
   
 ________________________________________
 
-** Deliverables Included
+* Deliverables Included
+
 •	Full runnable repository
-•	Live voice demo video
+
+•	Live voice demo video and Demo output
+
 •	Technical_Documentation.pdf
+
+
 Includes:
+
 o	Architecture diagrams
+
 o	Multi-agent workflow
+
 o	Reliability & safety considerations
+
 o	Human-centric design philosophy
+
 o	RAG integration
+
 o	Latency/cost analysis
+
 o	Limitations & future improvements
 ________________________________________
-** Known Limitations
+
+* Known Limitations
+
 •	Audio is turn-based, not full WebRTC duplex streaming
+
 •	RAG is partial (sufficient for demonstration)
+
 •	No avatar / facial animation (optional extension)
+
 •	No multi-session long-term memory
 ________________________________________
-** What I Would Do With More Time
+
+* What I Would Do With More Time
+
 •	Add WebRTC full-duplex with barge-in interruption
+
 •	Introduce a talking-head avatar with emotion-aware lip sync
+
 •	Expand RAG to semantic policy lookup with authoritative citations
+
 •	Create more advanced scoring rubrics
+
 •	Add datastore-backed analytics & session replay
+
 •	Support long-term adaptive learning across sessions
 ________________________________________
-** Final Note
+
+ Final Note
+ 
 This project fulfills all required elements of Option A, plus multiple extensions (live hints, assessment, RAG integration, cost/latency tracking). The emphasis remains on AI rigor, state correctness, and simulation reliability, as requested in the task specification.
+
 
 
 
