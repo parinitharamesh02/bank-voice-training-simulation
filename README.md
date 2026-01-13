@@ -1,8 +1,5 @@
 Bank Voice Training Simulation
 
-Convergent AI - Technical Task (Option A)
-
-Candidate - Parinitha 
 
 A real-time, voice-based simulation environment where a learner practices handling bank customer support scenarios with an LLM-driven “customer.” The emphasis is on AI quality, stateful multi-agent orchestration, latency/cost observability, safety, and evaluation logic.
 UI is intentionally minimal, as specified in the assignment.
@@ -204,64 +201,5 @@ ________________________________________
        You can now start a session, speak via microphone, and interact with the AI customer.
   
 ________________________________________
-
-* Deliverables Included
-
-•	Full runnable repository
-
-•	Live voice demo video and Demo output
-
-•	Technical_Documentation.pdf
-
-
-Includes:
-
-o	Architecture diagrams
-
-o	Multi-agent workflow
-
-o	Reliability & safety considerations
-
-o	Human-centric design philosophy
-
-o	RAG integration
-
-o	Latency/cost analysis
-
-o	Limitations & future improvements
-________________________________________
-
-* Known Limitations
-
-•	Audio is turn-based, not full WebRTC duplex streaming
-
-•	RAG is partial (sufficient for demonstration)
-
-•	No avatar / facial animation (optional extension)
-
-•	No multi-session long-term memory
-________________________________________
-
-* What I Would Do With More Time
-
-•	Add WebRTC full-duplex with barge-in interruption
-
-•	Introduce a talking-head avatar with emotion-aware lip sync
-
-•	Expand RAG to semantic policy lookup with authoritative citations
-
-•	Create more advanced scoring rubrics
-
-•	Add datastore-backed analytics & session replay
-
-•	Support long-term adaptive learning across sessions
-________________________________________
-
- Final Note
- 
-This project fulfills all required elements of Option A, plus multiple extensions (live hints, assessment, RAG integration, cost/latency tracking). The emphasis remains on AI rigor, state correctness, and simulation reliability, as requested in the task specification.
-
-
-
 
 
