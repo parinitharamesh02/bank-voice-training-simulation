@@ -2,16 +2,7 @@ Bank Voice Training Simulation
 
 
 A real-time, voice-based simulation environment where a learner practices handling bank customer support scenarios with an LLM-driven “customer.” The emphasis is on AI quality, stateful multi-agent orchestration, latency/cost observability, safety, and evaluation logic.
-UI is intentionally minimal, as specified in the assignment.
 
-•	A detailed architectural write-up is included in the repository as:
-Technical_Documentation.pdf (Architecture, design rationale, multi-agent system, reliability, state management, trade-offs).
-
-•	A demonstration video showcasing a live session is provided as well.
-
-Please find the video via this link: https://www.loom.com/share/2ddf6387d111445587806343fc52c495
-
-(Note: In the recording, the browser microphone sometimes filtered out the bot TTS audio as “background noise,” causing it not to be captured in the screencast. For completeness, I have included the audio samples that were recorded automatically of the AI customer reply inside the /audio_out folder.)
 ________________________________________
 
 * Features
@@ -201,5 +192,6 @@ ________________________________________
        You can now start a session, speak via microphone, and interact with the AI customer.
   
 ________________________________________
+
 
 
